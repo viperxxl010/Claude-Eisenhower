@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eisenhower Matrix - Taakbeheer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Eisenhower Matrix</h1>
+        <button id="viewToggle" class="view-toggle desktop-only">
+            <span id="toggleIcon">📋</span>
+            <span id="toggleText">Toon Takenlijst</span>
+        </button>
+    </header>
+
+    <!-- Matrix View -->
+    <main id="matrixView" class="matrix-view active">
+        <div class="matrix-grid">
+            <!-- Q1: Urgent & Belangrijk -->
+            <div class="quadrant q1" data-quadrant="q1">
+                <div class="quadrant-header">
+                    <h2>Q1: Urgent & Belangrijk</h2>
+                    <button class="add-task-btn" data-quadrant="q1">+ Taak</button>
+                </div>
+                <div class="tasks-container" data-quadrant="q1"></div>
+            </div>
+
+            <!-- Q2: Niet Urgent & Belangrijk -->
+            <div class="quadrant q2" data-quadrant="q2">
+                <div class="quadrant-header">
+                    <h2>Q2: Niet Urgent & Belangrijk</h2>
+                    <button class="add-task-btn" data-quadrant="q2">+ Taak</button>
+                </div>
+                <div class="tasks-container" data-quadrant="q2"></div>
+            </div>
+
+            <!-- Q3: Urgent & Niet Belangrijk -->
+            <div class="quadrant q3" data-quadrant="q3">
+                <div class="quadrant-header">
+                    <h2>Q3: Urgent & Niet Belangrijk</h2>
+                    <button class="add-task-btn" data-quadrant="q3">+ Taak</button>
+                </div>
+                <div class="tasks-container" data-quadrant="q3"></div>
+            </div>
+
+            <!-- Q4: Niet Urgent & Niet Belangrijk -->
+            <div class="quadrant q4" data-quadrant="q4">
+                <div class="quadrant-header">
+                    <h2>Q4: Niet Urgent & Niet Belangrijk</h2>
+                    <button class="add-task-btn" data-quadrant="q4">+ Taak</button>
+                </div>
+                <div class="tasks-container" data-quadrant="q4"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- List View -->
+    <main id="listView" class="list-view">
+        <div class="list-container">
+            <div class="list-section" data-quadrant="q1">
+                <h2 class="list-section-header">Q1: Urgent & Belangrijk</h2>
+                <div class="list-tasks" data-quadrant="q1"></div>
+            </div>
+            <div class="list-section" data-quadrant="q2">
+                <h2 class="list-section-header">Q2: Niet Urgent & Belangrijk</h2>
+                <div class="list-tasks" data-quadrant="q2"></div>
+            </div>
+            <div class="list-section" data-quadrant="q3">
+                <h2 class="list-section-header">Q3: Urgent & Niet Belangrijk</h2>
+                <div class="list-tasks" data-quadrant="q3"></div>
+            </div>
+            <div class="list-section" data-quadrant="q4">
+                <h2 class="list-section-header">Q4: Niet Urgent & Niet Belangrijk</h2>
+                <div class="list-tasks" data-quadrant="q4"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Mobile Bottom Navigation -->
+    <nav class="mobile-nav">
+        <button class="nav-btn active" data-view="matrix">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="8" height="8"></rect>
+                <rect x="13" y="3" width="8" height="8"></rect>
+                <rect x="3" y="13" width="8" height="8"></rect>
+                <rect x="13" y="13" width="8" height="8"></rect>
+            </svg>
+            <span>Matrix</span>
+        </button>
+        <button class="nav-btn" data-view="list">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+            </svg>
+            <span>Lijst</span>
+        </button>
+    </nav>
+
+    <!-- Task Modal -->
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Nieuwe Taak</h2>
+                <button class="close-btn">&times;</button>
+            </div>
+            <form id="taskForm">
+                <div class="form-group">
+                    <label for="taskTitle">Titel *</label>
+                    <input type="text" id="taskTitle" required placeholder="Bijv. Client meeting voorbereiden">
+                </div>
+                <div class="form-group">
+                    <label for="taskDescription">Beschrijving</label>
+                    <textarea id="taskDescription" rows="3" placeholder="Extra details over deze taak..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="taskDuration">Geschatte tijdsduur</label>
+                    <input type="text" id="taskDuration" placeholder="Bijv. 30 min, 2 uur">
+                </div>
+                <input type="hidden" id="taskQuadrant">
+                <input type="hidden" id="taskId">
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary cancel-btn">Annuleren</button>
+                    <button type="submit" class="btn-primary">Opslaan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
