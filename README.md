@@ -70,6 +70,48 @@ start index.html
 
 **Dat is alles!** De app werkt direct zonder installatie van dependencies of build steps.
 
+### 📱 Installeren als iPhone App (PWA)
+
+De app kan geïnstalleerd worden als een volwaardige iPhone app via Safari:
+
+#### Stap 1: Open de app in Safari
+1. Host de app online (bijv. via GitHub Pages, Netlify, of Vercel)
+2. Open de URL in **Safari** op je iPhone (niet Chrome!)
+
+#### Stap 2: Voeg toe aan Home Screen
+1. Tik op het **Deel-icoon** (vierkant met pijl omhoog) onderaan het scherm
+2. Scroll naar beneden en tik op **"Zet op beginscherm"** of **"Add to Home Screen"**
+3. Pas eventueel de naam aan (bijv. "Eisenhower")
+4. Tik op **"Voeg toe"** rechtsboven
+
+#### Stap 3: Gebruik als app
+- Het app-icoon verschijnt nu op je home screen
+- Open de app direct vanaf je home screen
+- De app opent in volledig scherm (zonder Safari browser balk)
+- Werkt ook offline na de eerste keer openen!
+
+#### Snel Online Zetten (Gratis)
+
+**Via GitHub Pages:**
+```bash
+# Push je code naar GitHub (al gedaan!)
+# Ga naar Settings > Pages in je repository
+# Selecteer de branch en Save
+# Je app is beschikbaar op: https://username.github.io/Claude-Eisenhower
+```
+
+**Via Vercel (1-minuut setup):**
+```bash
+npm install -g vercel
+vercel
+# Volg de instructies - klaar!
+```
+
+**Via Netlify Drop:**
+- Ga naar https://app.netlify.com/drop
+- Sleep de hele map naar de browser
+- Krijg direct een URL!
+
 ### Gebruik
 
 #### Taak Toevoegen
@@ -103,19 +145,31 @@ start index.html
 - **CSS3**: Moderne styling met Flexbox en Grid
 - **Vanilla JavaScript**: Geen frameworks of dependencies
 - **LocalStorage API**: Clientzijdige data-opslag
+- **Progressive Web App (PWA)**: Installeerbaar als native app
+- **Service Worker**: Offline functionaliteit en caching
+
+### PWA Functies
+- ✅ Installeerbaar op iOS, Android en Desktop
+- ✅ Werkt volledig offline na eerste laadmoment
+- ✅ App-icoon op home screen
+- ✅ Volledig scherm (geen browser UI)
+- ✅ Snelle laadtijden door caching
 
 ### Browser Compatibiliteit
 - Chrome 90+
 - Firefox 88+
-- Safari 14+
+- Safari 14+ (iOS en macOS)
 - Edge 90+
 
 ### Bestandsstructuur
 ```
 Claude-Eisenhower/
-├── index.html          # Hoofdpagina
+├── index.html          # Hoofdpagina met PWA meta tags
 ├── styles.css          # Alle styling
-├── app.js             # Applicatie logica
+├── app.js             # Applicatie logica + Service Worker registratie
+├── service-worker.js   # Offline functionaliteit en caching
+├── manifest.json       # PWA configuratie
+├── icon.svg           # App icoon (vector)
 └── README.md          # Documentatie
 ```
 

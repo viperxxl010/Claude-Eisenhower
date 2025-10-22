@@ -1,0 +1,29 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#4a90e2" rx="64"/>
+
+  <!-- Grid lines -->
+  <line x1="256" y1="80" x2="256" y2="432" stroke="white" stroke-width="6" opacity="0.9"/>
+  <line x1="80" y1="256" x2="432" y2="256" stroke="white" stroke-width="6" opacity="0.9"/>
+
+  <!-- Q1 - Red (top-left) -->
+  <rect x="90" y="90" width="156" height="156" fill="#ffcccb" rx="12"/>
+  <text x="168" y="155" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#333">Q1</text>
+  <text x="168" y="195" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#666">Urgent</text>
+  <text x="168" y="220" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#666">Belangrijk</text>
+
+  <!-- Q2 - Blue (top-right) -->
+  <rect x="266" y="90" width="156" height="156" fill="#add8e6" rx="12"/>
+  <text x="344" y="155" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#333">Q2</text>
+  <text x="344" y="195" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#666">Plan</text>
+
+  <!-- Q3 - Orange (bottom-left) -->
+  <rect x="90" y="266" width="156" height="156" fill="#ffd9a0" rx="12"/>
+  <text x="168" y="331" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#333">Q3</text>
+  <text x="168" y="371" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#666">Delegeer</text>
+
+  <!-- Q4 - Gray (bottom-right) -->
+  <rect x="266" y="266" width="156" height="156" fill="#e0e0e0" rx="12"/>
+  <text x="344" y="331" font-family="Arial, sans-serif" font-size="48" font-weight="bold" text-anchor="middle" fill="#333">Q4</text>
+  <text x="344" y="371" font-family="Arial, sans-serif" font-size="20" text-anchor="middle" fill="#666">Elimineer</text>
+</svg>

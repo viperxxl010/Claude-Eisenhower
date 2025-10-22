@@ -1,0 +1,46 @@
+{
+  "name": "Eisenhower Matrix - Taakbeheer",
+  "short_name": "Eisenhower",
+  "description": "Prioriteer en beheer je taken met de Eisenhower Matrix",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f7fa",
+  "theme_color": "#4a90e2",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["productivity", "business"],
+  "shortcuts": [
+    {
+      "name": "Matrix Weergave",
+      "short_name": "Matrix",
+      "description": "Open de Eisenhower Matrix",
+      "url": "/?view=matrix",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Lijst Weergave",
+      "short_name": "Lijst",
+      "description": "Open de takenlijst",
+      "url": "/?view=list",
+      "icons": [{ "src": "icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
